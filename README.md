@@ -35,9 +35,9 @@ Both **functional correctness** and **performance aspects** are validated to ens
 
 | File                                                 | Description                                                    |
 | ---------------------------------------------------- | ---------------------------------------------------------      |
-| `Booking_ApiTesting.json`                            | Postman collection with API test cases for the Booking API.    |
-| `Environment_BookingAPI.json`                        | Environment configuration with required variables              |
-| `Booking Api Testing.postman_test_run.json`          | JSON output of test execution with logs                        |
+| `Booking_api.json`                                   | Postman collection with API test cases for the Booking API.    |
+| `Environment.json`                                   | Environment configuration with required variables              |
+| `Booking Api.postman_test_run.json`                  | JSON output of test execution with logs                        |
 | `newman-run-report-2024-09-22-12-51-08-091-0.html`   | Standard Newman HTML execution report                          |
 | `Booking Api Testing-2024-09-22-13-21-31-213-0.html` | Detailed HTML Extra report with request and response data      |
 
@@ -83,17 +83,24 @@ npm install -g newman-reporter-htmlextra
 ```bash
 newman run Booking_api.json -e Environment.json
 ```
+<img width="1360" height="768" alt="Screenshot (50)" src="https://github.com/user-attachments/assets/5b404667-c48e-41ce-ae74-8bceb407ab22" />
+
+<img width="1360" height="768" alt="Screenshot (51)" src="https://github.com/user-attachments/assets/ddaade3d-5ff4-4889-af78-5d332b79ea32" />
+
 
 #### Execution with simple HTML report
 ```bash
 newman run Booking_api.json -e Environment.json -r html
 ```
+<img width="1359" height="732" alt="Screenshot (52)" src="https://github.com/user-attachments/assets/844e98ef-6919-4cee-9a9b-f49ff308a8c3" />
+
 
 #### Execution with HTML Extra Report
 
 ```bash
 newman run Booking_api.json -e Environment.json --reporters=cli,htmlextra
 ```
+<img width="1359" height="722" alt="Screenshot (53)" src="https://github.com/user-attachments/assets/4ae5e29f-1006-4d80-be83-1dd1816fe3f7" />
 
 The generated HTML report can be viewed in any web browser.
 
