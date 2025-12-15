@@ -33,13 +33,13 @@ Both **functional correctness** and **performance aspects** are validated to ens
 
 ##  Repository Contents
 
-| File                                                 | Description                                               |
-| ---------------------------------------------------- | --------------------------------------------------------- |
-| `Booking_ApiTesting.json`                            | Postman collection containing automated API test cases    |
-| `Environment_BookingAPI.json`                        | Environment configuration with required variables         |
-| `Booking Api Testing.postman_test_run.json`          | JSON output of test execution with logs                   |
-| `newman-run-report-2024-09-22-12-51-08-091-0.html`   | Standard Newman HTML execution report                     |
-| `Booking Api Testing-2024-09-22-13-21-31-213-0.html` | Detailed HTML Extra report with request and response data |
+| File                                                 | Description                                                    |
+| ---------------------------------------------------- | ---------------------------------------------------------      |
+| `Booking_ApiTesting.json`                            | Postman collection with API test cases for the Booking API.    |
+| `Environment_BookingAPI.json`                        | Environment configuration with required variables              |
+| `Booking Api Testing.postman_test_run.json`          | JSON output of test execution with logs                        |
+| `newman-run-report-2024-09-22-12-51-08-091-0.html`   | Standard Newman HTML execution report                          |
+| `Booking Api Testing-2024-09-22-13-21-31-213-0.html` | Detailed HTML Extra report with request and response data      |
 
 ---
 
@@ -81,21 +81,25 @@ npm install -g newman-reporter-htmlextra
 #### Standard Execution
 
 ```bash
-newman run Booking_ApiTesting.json -e Environment_BookingAPI.json
+newman run Booking_api.json -e Environment.json
+```
+
+#### Execution with simple HTML report
+```bash
+newman run Booking_api.json -e Environment.json -r html
 ```
 
 #### Execution with HTML Extra Report
 
 ```bash
-newman run Booking_ApiTesting.json -e Environment_BookingAPI.json -r htmlextra \
---reporter-htmlextra-export newman-run-report.html
+newman run Booking_api.json -e Environment.json --reporters=cli,htmlextra
 ```
 
 The generated HTML report can be viewed in any web browser.
 
 ---
 
-## 🧪 Tested API Endpoints
+##  Tested API Endpoints
 
 * **Create Booking (POST)**
   Validates booking creation with both valid and invalid request payloads.
